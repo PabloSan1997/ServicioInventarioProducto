@@ -10,8 +10,7 @@ export const readApi = {
                 const ft = await fetch(`${readApi.urlBase}/api/product?size=10&page=${page}`, {
                     method: 'GET',
                     headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': 'Bearer ' + token
+                        'Authorization': `Bearer ${token}`
                     }
                 });
                 if (!ft.ok)

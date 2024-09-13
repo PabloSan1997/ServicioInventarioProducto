@@ -1,6 +1,7 @@
+import { MainRoutes } from "./MainRoutes";
 
 
 
 export  function App() {
-  return <div>App</div>;
+  return <MainRoutes/>;
 }

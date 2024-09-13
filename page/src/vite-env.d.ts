@@ -52,6 +52,5 @@ interface LoginResponse {
 interface InitialState {
     productos:ProductoMostrar[];
     token:string;
-    page:number;
     search:string;
 }
