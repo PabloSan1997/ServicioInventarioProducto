@@ -24,6 +24,7 @@ public class ProductoServiceImp implements ProductService{
     @Autowired
     private MonedaRepository monedaRepository;
 
+
     @Override
     @Transactional
     public List<Producto> findAll(Pageable pageable) {
@@ -52,8 +53,13 @@ public class ProductoServiceImp implements ProductService{
     @Transactional
     public List<Producto> save(ListSaveProduct saveProduct) {
         List<SaveProduct> listsaveProducts = saveProduct.getProducts();
+        Monedas monedas = monedaRepository.findById(1L).orElseThrow();
         if(listsaveProducts.size()>0){
-            List<Producto> productos = listsaveProducts.stream().map(this::convertToProducto).toList();
+            List<Producto> productos = listsaveProducts.stream().map(p -> {
+                Producto pro = convertToProducto(p);
+                pro.setMonedas(monedas);
+                return pro;
+            }).toList();
             return (List<Producto>) productRepository.saveAll(productos);
         }
         return new ArrayList<>();
