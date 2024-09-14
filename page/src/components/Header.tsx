@@ -1,0 +1,22 @@
+import { Link, useLocation } from "react-router-dom";
+import { routesIndex } from "../utils/routesIndes";
+import { MonedaComponent } from "./MonedaComponent";
+
+
+
+
+export function Header() {
+  const location = useLocation();
+
+  return (
+    <header>
+      <h1>Lista</h1>
+      {
+        location.pathname == routesIndex.newProduct ?
+          <Link to={routesIndex.home}>Home</Link> :
+          <Link to={routesIndex.newProduct}>Agregar</Link>
+      }
+      <MonedaComponent/>
+    </header>
+  );
+}

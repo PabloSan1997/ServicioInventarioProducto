@@ -20,7 +20,7 @@ export function Contenedor() {
             dispatch(readApi.readProducts({ token: state.token, page: num }));
         else
             dispatch(readApi.readBySearch({ token: state.token, name: state.search, page: num }));
-    }, [page, state.search.trim()]);
+    }, [page, state.search.trim(), state.moneda.dolar, state.moneda.iva, state.moneda.porcentajeGanancia]);
     return (
         <div>
             <Menu page={num} />

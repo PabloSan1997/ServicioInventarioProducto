@@ -3,5 +3,6 @@
 export const routesIndex = {
     login:'/login',
     home:'/home',
-    edit:'/edit'
+    edit:'/edit',
+    newProduct:'/add-product'
 }

@@ -4,6 +4,8 @@ import { routesIndex } from "./utils/routesIndes";
 import { Home } from "./lyouts/Home";
 import { Login } from "./lyouts/Login";
 import { Editar } from "./lyouts/Editar";
+import { AgregarProducto } from "./lyouts/AgregarProducto";
+import { Header } from "./components/Header";
 
 
 
@@ -14,7 +16,7 @@ const Rutas = () => useRoutes([
   },
   {
     path: routesIndex.home,
-    element:<Navigate to={`${routesIndex.home}/0`}/>
+    element: <Navigate to={`${routesIndex.home}/0`} />
   },
   {
     path: routesIndex.edit,
@@ -39,12 +41,21 @@ const Rutas = () => useRoutes([
   {
     path: routesIndex.login,
     element: <Login />
+  },
+  {
+    path: routesIndex.newProduct,
+    element: (
+      <ViewToken>
+        <AgregarProducto />
+      </ViewToken>
+    )
   }
 ]);
 
 export function MainRoutes() {
   return (
     <HashRouter>
+      <Header />
       <Rutas />
     </HashRouter>
   );

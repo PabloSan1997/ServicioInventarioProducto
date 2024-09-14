@@ -26,6 +26,12 @@ const initialState: InitialState = {
         precioMXN: 0,
         precioFinal: 0,
         iva: 0
+    },
+    moneda:{
+        id: 1,
+        dolar: 0,
+        iva: 0,
+        porcentajeGanancia: 0
     }
 }
 
@@ -77,7 +83,20 @@ const productoSlice = createSlice({
         builder.addCase(readApi.putProduct.fulfilled, (state)=>{
             state.editProduct = initialState.editProduct;
             window.location.href = `/#${routesIndex.home}`;
-        })
+        });
+        builder.addCase(readApi.save.fulfilled, ()=>{
+            window.location.href = `/#${routesIndex.home}`;
+        });
+        builder.addCase(readApi.readMoneda.fulfilled, (state, action)=>{
+            state.moneda = action.payload;
+        });
+        builder.addCase(readApi.editMoneda.fulfilled, (state, action)=>{
+            state.moneda = action.payload;
+        });
+
+        builder.addCase(readApi.deleteProduct.fulfilled, ()=>{
+            window.location.href = `/#${routesIndex.home}`;
+        });
     }
 
 });

@@ -167,5 +167,46 @@ export const readApi = {
                 throw { message };
             }
         }
+    ),
+    readMoneda:createAsyncThunk(
+        'extraReducer/readMoneda',
+        async ({token}:{token:string}): Promise<MonedaInterface> => {
+            try {
+                const ft = await fetch(`${readApi.urlBase}/api/moneda`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer ' + token
+                    }
+                });
+                if (!ft.ok)
+                    throw await ft.json();
+                return ft.json();
+            } catch (error) {
+                const { message } = error as { message: string }
+                throw { message };
+            }
+        }
+    ),
+    editMoneda:createAsyncThunk(
+        'extraReducer/editMoneda',
+        async({token, moneda}:{token:string, moneda:SaveMoneda})=>{
+            try {
+                const ft = await fetch(`${readApi.urlBase}/api/moneda`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer ' + token
+                    },
+                    body: JSON.stringify(moneda)
+                });
+                if (!ft.ok)
+                    throw await ft.json();
+                return ft.json();
+            } catch (error) {
+                const { message } = error as { message: string }
+                throw { message };
+            }
+        }
     )
 }

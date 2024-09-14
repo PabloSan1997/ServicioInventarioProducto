@@ -26,11 +26,17 @@ export function ShowProducto({ seccion, urlImages, linea, serie, marca, descripc
             console.error(error);
         }
     }
+    const eliminar = () =>{
+        if(confirm('¿Seguro que desea elminar producto?')){
+            dispatch(readApi.deleteProduct({token, id}))
+        }
+    }
     return (
         <form onSubmit={subir}>
             <label htmlFor="entradaEditar">Datos</label>
             <textarea id="entradaEditar" value={valores} onChange={e => setValores(e.target.value)}></textarea>
             <button type="submit">Agregar</button>
+            <button type="button" onClick={eliminar}>Eliminar</button>
         </form>
     );
 }

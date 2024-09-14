@@ -55,9 +55,19 @@ interface InitialState {
     search: string;
     message: string;
     editProduct:ProductoMostrar;
+    moneda:MonedaInterface;
 }
 
 interface Children {
     children: JSX.Element | JSX.Element[]
 }
 
+interface SaveMoneda{
+	dolar: number,
+	iva: number,
+	porcentajeGanancia: number
+}
+
+interface MonedaInterface extends SaveMoneda{
+    id:1;
+}
