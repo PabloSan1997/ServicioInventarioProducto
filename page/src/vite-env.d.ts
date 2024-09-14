@@ -19,6 +19,7 @@ interface ProductoMostrar {
     precioMXN: number;
     precioFinal: number;
     iva: number;
+    claveFabricante:string;
 }
 
 interface SaveProducto {
@@ -34,6 +35,7 @@ interface SaveProducto {
     estado: string;
     precioDolar: number;
     ucp: string;
+    claveFabricante:string;
 }
 
 interface ListSaveProducts {

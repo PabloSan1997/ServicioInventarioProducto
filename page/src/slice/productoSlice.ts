@@ -25,7 +25,8 @@ const initialState: InitialState = {
         ganancia: 0,
         precioMXN: 0,
         precioFinal: 0,
-        iva: 0
+        iva: 0,
+        claveFabricante: ""
     },
     moneda:{
         id: 1,

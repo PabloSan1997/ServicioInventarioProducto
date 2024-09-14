@@ -24,6 +24,7 @@ public class Producto {
     private String marca;
     private String descripcion;
     private String clavePCH;
+    private String claveFabricante;
     private String UCP;
     private String garantia;
     private Long existencias;

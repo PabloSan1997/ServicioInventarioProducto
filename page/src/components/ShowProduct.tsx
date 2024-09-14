@@ -5,9 +5,9 @@ import { readApi } from "../api/readApi";
 
 
 
-export function ShowProducto({ seccion, urlImages, linea, serie, marca, descripcion, clavePCH, garantia, existencias, estado, precioDolar, ucp, id }: ProductoMostrar) {
+export function ShowProducto({ seccion, urlImages, claveFabricante,linea, serie, marca, descripcion, clavePCH, garantia, existencias, estado, precioDolar, ucp, id }: ProductoMostrar) {
     const initialValue: SaveProducto = {
-        seccion, linea, serie, marca, descripcion, clavePCH, garantia, existencias, estado, precioDolar, ucp, urlImages
+        seccion, linea, serie, marca, descripcion, clavePCH, claveFabricante, garantia, existencias, estado, precioDolar, ucp, urlImages,
     };
     const dispatch = useAppDispatch();
     const token = useAppSelector(state => state.productReducer.token);

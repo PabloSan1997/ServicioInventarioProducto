@@ -9,6 +9,8 @@ import java.util.List;
 
 public interface ProductRepository extends CrudRepository<Producto, Long> {
     List<Producto> findAll(Pageable pageable);
+    @Query("select p from Producto p order by p.id")
+    List<Producto> findAllOrderById(Pageable pageable);
     @Query("select p from Producto p where p.descripcion like %?1%")
     List<Producto> findBySearch(String name, Pageable pageable);
 

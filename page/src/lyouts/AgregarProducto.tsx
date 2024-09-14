@@ -8,6 +8,7 @@ const initialData: SaveProducto = {
     serie: "",
     marca: "",
     descripcion: "",
+    claveFabricante: "",
     clavePCH: "",
     garantia: "",
     existencias: 0,

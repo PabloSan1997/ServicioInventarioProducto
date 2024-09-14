@@ -28,7 +28,7 @@ public class ProductoServiceImp implements ProductService{
     @Override
     @Transactional
     public List<Producto> findAll(Pageable pageable) {
-        return productRepository.findAll(pageable);
+        return productRepository.findAllOrderById(pageable);
     }
 
     @Override
@@ -107,6 +107,7 @@ public class ProductoServiceImp implements ProductService{
                 .clavePCH(saveProduct.getClavePCH())
                 .precioDolar(saveProduct.getPrecioDolar())
                 .estado(saveProduct.getEstado())
+                .claveFabricante(saveProduct.getClaveFabricante())
                 .build();
 
     }

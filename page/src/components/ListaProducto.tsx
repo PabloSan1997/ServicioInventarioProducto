@@ -4,7 +4,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { routesIndex } from "../utils/routesIndes";
 
-export function ListaProducto({seccion, linea, serie, marca, descripcion, clavePCH, garantia, existencias, estado, precioDolar, ucp, iva, precioFinal, precioMXN, ganancia, id}:ProductoMostrar) {
+export function ListaProducto({seccion, linea, serie, marca, descripcion, claveFabricante,clavePCH, garantia, existencias, estado, precioDolar, ucp, iva, precioFinal, precioMXN, ganancia, id}:ProductoMostrar) {
   const goTo = useNavigate();
   return (
     <tr onClick={()=>goTo(`${routesIndex.edit}/${id}`)}>
@@ -13,6 +13,7 @@ export function ListaProducto({seccion, linea, serie, marca, descripcion, claveP
         <td>{serie}</td>
         <td>{marca}</td>
         <td>{descripcion}</td>
+        <td>{claveFabricante}</td>
         <td>{clavePCH}</td>
         <td>{garantia}</td>
         <td>{existencias}</td>

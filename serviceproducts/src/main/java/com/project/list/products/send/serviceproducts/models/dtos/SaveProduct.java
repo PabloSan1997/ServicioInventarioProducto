@@ -19,6 +19,7 @@ public class SaveProduct {
     private String descripcion;
     private String clavePCH;
     private String UCP;
+    private String claveFabricante;
     private String garantia;
     private Long existencias;
     private List<String> urlImages;

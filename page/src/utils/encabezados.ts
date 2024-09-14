@@ -5,6 +5,7 @@ export const cabezas =
         'Serie',
         'Marca',
         'Descripcion',
+        'Clave Favricante',
         'Clave PCH',
         'Garantia',
         'Existencias',
