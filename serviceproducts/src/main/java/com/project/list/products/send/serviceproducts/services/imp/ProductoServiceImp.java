@@ -85,6 +85,14 @@ public class ProductoServiceImp implements ProductService{
         productRepository.deleteById(id);
     }
 
+    @Override
+    @Transactional
+    public Producto findById(Long id) {
+        return productRepository.findById(id).orElseThrow(()->{
+            throw new MyBadRequestException("Id invalido");
+        });
+    }
+
     private Producto convertToProducto(SaveProduct saveProduct){
         return Producto.builder()
                 .linea(saveProduct.getLinea())

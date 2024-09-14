@@ -15,4 +15,5 @@ public interface ProductService {
     List<Producto> save(ListSaveProduct saveProduct);
     Producto edit(Long id, SaveProduct saveProduct);
     void deleteById(Long id);
+    Producto findById(Long id);
 }

@@ -3,7 +3,6 @@ package com.project.list.products.send.serviceproducts.controller;
 import com.project.list.products.send.serviceproducts.models.dtos.ListSaveProduct;
 import com.project.list.products.send.serviceproducts.models.dtos.SaveProduct;
 import com.project.list.products.send.serviceproducts.services.ProductService;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -33,6 +32,10 @@ public class ProductController {
     @GetMapping("/price-asc")
     public ResponseEntity<?> findByPriceasc(Pageable pageable){
         return ResponseEntity.ok(productService.findByPriceAsc(pageable));
+    }
+    @GetMapping("/{id}")
+    public ResponseEntity<?> findOneById(@PathVariable Long id){
+        return ResponseEntity.ok(productService.findById(id));
     }
     @PostMapping
     public ResponseEntity<?> save(@Valid @RequestBody ListSaveProduct saveProduct){
