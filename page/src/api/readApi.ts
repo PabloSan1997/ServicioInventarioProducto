@@ -22,6 +22,26 @@ export const readApi = {
             }
         }
     ),
+    readProductById:createAsyncThunk(
+        'extraReducer/readproductsById',
+        async ({ token, id }: { token: string, id: number}): Promise<ProductoMostrar> => {
+            try {
+                const ft = await fetch(`${readApi.urlBase}/api/product/${id}`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer ' + token
+                    }
+                });
+                if (!ft.ok)
+                    throw await ft.json();
+                return ft.json();
+            } catch (error) {
+                const { message } = error as { message: string }
+                throw { message };
+            }
+        }
+    ),
     readBySearch: createAsyncThunk(
         'extraReducer/readproductsSearch',
         async ({ token, page, name }: { token: string, page: number, name: string }): Promise<ProductoMostrar[]> => {

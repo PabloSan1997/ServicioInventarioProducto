@@ -1,33 +1,32 @@
 <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="200" height="200" fill="#1E1E1E"/>
-<g clip-path="url(#clip0_0_1)">
-<g filter="url(#filter0_f_0_1)">
+<g clip-path="url(#clip0_11_2)">
+<g filter="url(#filter0_f_11_2)">
 <rect x="7" y="10" width="180" height="180" rx="48" fill="black"/>
 <rect x="7" y="10" width="180" height="180" rx="48" stroke="white" stroke-width="5"/>
 </g>
-<g filter="url(#filter1_d_0_1)">
+<g filter="url(#filter1_d_11_2)">
 <rect x="7" y="10" width="180" height="180" rx="48" fill="black"/>
 <rect x="7" y="10" width="180" height="180" rx="48" stroke="#727272" stroke-width="5"/>
 </g>
 <path d="M100.125 39.4375C98.1667 40.7292 96.3958 41.8333 94.8125 42.75C93.2708 43.625 91.7917 44.3542 90.375 44.9375C90.1667 52.4792 89.9792 59.2292 89.8125 65.1875C89.6875 71.1458 89.5625 76.4375 89.4375 81.0625C89.3542 85.6458 89.2708 89.625 89.1875 93C89.1458 96.3333 89.1042 99.1875 89.0625 101.562C88.9375 107.104 88.8958 110.896 88.9375 112.938C88.8958 114.479 88.7292 115.958 88.4375 117.375C88.1875 118.583 87.7917 119.875 87.25 121.25C86.7083 122.583 85.9583 123.729 85 124.688C87.5 124.771 89.8333 124.812 92 124.812C94.2083 124.812 96.3125 124.812 98.3125 124.812C104.021 124.812 108.729 124.729 112.438 124.562C116.146 124.396 119.104 124.208 121.312 124C123.521 123.75 125.083 123.542 126 123.375C126.917 123.167 127.458 123.021 127.625 122.938C125.417 124.438 123.583 125.729 122.125 126.812C120.667 127.896 119.354 128.792 118.188 129.5C117.062 130.167 115.938 130.667 114.812 131C113.729 131.333 112.458 131.5 111 131.5H101.375C98.6667 131.5 95.7292 131.521 92.5625 131.562C89.3958 131.562 86.375 131.604 83.5 131.688C80.625 131.729 78.0417 131.833 75.75 132C73.5 132.125 71.8958 132.292 70.9375 132.5C72.1042 131.5 73.1667 130.417 74.125 129.25C75.0833 128.083 75.8958 126.646 76.5625 124.938C77.2708 123.229 77.8125 121.188 78.1875 118.812C78.5625 116.396 78.75 113.5 78.75 110.125V47C77.4583 47.125 75.8958 47.2917 74.0625 47.5C72.2292 47.7083 70.1458 47.9792 67.8125 48.3125C70.0625 46.4792 72.0833 45.0833 73.875 44.125C75.7083 43.1667 77.2708 42.4583 78.5625 42C80.0625 41.5 81.3958 41.2083 82.5625 41.125C84.0208 41.1667 85.625 41.1458 87.375 41.0625C89.1667 40.9792 90.875 40.875 92.5 40.75C94.1667 40.5833 95.6875 40.3958 97.0625 40.1875C98.4375 39.9375 99.4583 39.6875 100.125 39.4375ZM127.625 122.938V122.875C127.667 122.833 127.708 122.812 127.75 122.812L127.625 122.938Z" fill="#D1F1FF"/>
 </g>
 <defs>
-<filter id="filter0_f_0_1" x="-2.6" y="0.4" width="199.2" height="199.2" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_f_11_2" x="-2.6" y="0.4" width="199.2" height="199.2" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="3.55" result="effect1_foregroundBlur_0_1"/>
+<feGaussianBlur stdDeviation="3.55" result="effect1_foregroundBlur_11_2"/>
 </filter>
-<filter id="filter1_d_0_1" x="0.5" y="7.5" width="193" height="193" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter1_d_11_2" x="0.5" y="7.5" width="193" height="193" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="4"/>
 <feGaussianBlur stdDeviation="2"/>
 <feComposite in2="hardAlpha" operator="out"/>
 <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_11_2"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_11_2" result="shape"/>
 </filter>
-<clipPath id="clip0_0_1">
+<clipPath id="clip0_11_2">
 <rect width="200" height="200" fill="white"/>
 </clipPath>
 </defs>

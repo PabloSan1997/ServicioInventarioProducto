@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom"
+import { routesIndex } from "../utils/routesIndes";
 
 
 export function Menu({page}:{page:number}) {
     const retroceder = ()=>{
       if(page>0){
-        return `/${page-1}`;
+        return `${routesIndex.home}/${page-1}`;
       }
-      return `/${page}`;
+      return `${routesIndex.home}/${page}`;
     }
-    const ir = () => `/${page+1}`;
+    const ir = () => `${routesIndex.home}/${page+1}`;
   return (
     <div>
         <Link to={retroceder()}>-</Link>

@@ -1,26 +1,82 @@
-import { createSlice} from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { readApi } from "../api/readApi";
+import { productStorage } from "../utils/produtStorage";
+import { routesIndex } from "../utils/routesIndes";
 
-const initialState:InitialState = {
+const initialState: InitialState = {
     productos: [],
-    token: "eyJhbGciOiJIUzUxMiJ9.eyJhdXRob3JpdGllcyI6Ilt7XCJhdXRob3JpdHlcIjpcIlJPTEVfQURNSU5cIn0se1wiYXV0aG9yaXR5XCI6XCJST0xFX1VTRVJcIn1dIiwic3ViIjoicGFibG8xMjMiLCJpYXQiOjE3MjYxOTIxMDQsImV4cCI6MTcyNjI3ODUwNH0.mc2kvnAnRsNiSn4J_CV4jr5sGHtW7sFhOFou4JEyOK4-9d3-qVj0XXXGnvay6TiSPRltYqMQ5dRQhOgYb7EDGA",
-    search:''
+    token: productStorage.read(),
+    search: '',
+    message:'',
+    editProduct:{
+        seccion: "",
+        linea: "",
+        serie: "",
+        marca: "",
+        descripcion: "",
+        clavePCH: "",
+        garantia: "",
+        existencias: 0,
+        urlImages: [],
+        estado: "",
+        precioDolar: 0,
+        ucp: "",
+        id: 0,
+        ganancia: 0,
+        precioMXN: 0,
+        precioFinal: 0,
+        iva: 0
+    }
 }
 
 const productoSlice = createSlice({
-    name:'slice/product',
+    name: 'slice/product',
     initialState,
-    reducers:{
-        logout:(state)=>{
+    reducers: {
+        logout: (state) => {
             state.token = '';
             state.productos = [];
+        },
+        writeSearch(state, action: PayloadAction<{ text: string }>) {
+            state.search = action.payload.text;
+        },
+        writeMessage(state, action:PayloadAction<{text:string}>){
+            state.message = action.payload.text;
         }
     },
-    extraReducers:(builder)=>{
-        builder.addCase(readApi.login.fulfilled, ()=>{});
+    extraReducers: (builder) => {
+        builder.addCase(readApi.login.fulfilled, (state, action) => {
+            state.token = action.payload.token;
+            productStorage.save(action.payload.token);
+            state.message = '';
+        });
+        builder.addCase(readApi.login.rejected, (state, action)=>{
+            state.message = action.error.message as string;
+        })
 
-        builder.addCase(readApi.readProducts.fulfilled, (state, action)=>{
+        builder.addCase(readApi.readProducts.fulfilled, (state, action) => {
             state.productos = action.payload;
+            state.editProduct.id = 0;
+        });
+        builder.addCase(readApi.readProducts.rejected, (state) => {
+            state.token = '';
+            productStorage.save('');
+        });
+        builder.addCase(readApi.readBySearch.fulfilled, (state, action) => {
+            state.productos = action.payload;
+            state.editProduct.id = 0;
+        });
+        builder.addCase(readApi.readBySearch.rejected, (state) => {
+            state.token = '';
+            productStorage.save('');
+        });
+
+        builder.addCase(readApi.readProductById.fulfilled, (state, action)=>{
+            state.editProduct = action.payload;
+        });
+        builder.addCase(readApi.putProduct.fulfilled, (state)=>{
+            state.editProduct = initialState.editProduct;
+            window.location.href = `/#${routesIndex.home}`;
         })
     }
 

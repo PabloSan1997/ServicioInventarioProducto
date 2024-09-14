@@ -1,10 +1,13 @@
 
 
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { routesIndex } from "../utils/routesIndes";
 
-export function ListaProducto({seccion, linea, serie, marca, descripcion, clavePCH, garantia, existencias, estado, precioDolar, ucp, iva, precioFinal, precioMXN, ganancia}:ProductoMostrar) {
-    return (
-    <tr>
+export function ListaProducto({seccion, linea, serie, marca, descripcion, clavePCH, garantia, existencias, estado, precioDolar, ucp, iva, precioFinal, precioMXN, ganancia, id}:ProductoMostrar) {
+  const goTo = useNavigate();
+  return (
+    <tr onClick={()=>goTo(`${routesIndex.edit}/${id}`)}>
         <td>{seccion}</td>
         <td>{linea}</td>
         <td>{serie}</td>

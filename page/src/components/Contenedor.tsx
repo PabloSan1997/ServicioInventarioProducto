@@ -10,32 +10,34 @@ import { useParams } from "react-router-dom";
 import { ListaProducto } from "./ListaProducto";
 
 
-
-export  function Contenedor() {
+export function Contenedor() {
     const dispatch = useAppDispatch();
     const state = useAppSelector(state => state.productReducer);
-    const {page} = useParams();
-    const num = isNaN(Number(page))?0:Number(page);
-    React.useEffect(()=>{
-        dispatch(readApi.readProducts({token:state.token, page:num}));
-    },[page]);
-  return(
-    <div>
-        <Menu page={num}/>
-        <table className="data">
-            <thead>
-                <tr>
-                    {cabezas.map(p => 
-                        <th key={p}>{p}</th>
-                    )}
-                </tr>
-            </thead>
-            <tbody>
-                {state.productos.map(p =>(
-                    <ListaProducto key={p.id} {...p}/>
-                ))}
-            </tbody>
-        </table>
-    </div>
-  );
+    const { page } = useParams();
+    const num = isNaN(Number(page)) ? 0 : Number(page);
+    React.useEffect(() => {
+        if (!state.search.trim())
+            dispatch(readApi.readProducts({ token: state.token, page: num }));
+        else
+            dispatch(readApi.readBySearch({ token: state.token, name: state.search, page: num }));
+    }, [page, state.search.trim()]);
+    return (
+        <div>
+            <Menu page={num} />
+            <table className="data">
+                <thead>
+                    <tr>
+                        {cabezas.map(p =>
+                            <th key={p}>{p}</th>
+                        )}
+                    </tr>
+                </thead>
+                <tbody>
+                    {state.productos.map(p => (
+                        <ListaProducto key={p.id} {...p} />
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    );
 }

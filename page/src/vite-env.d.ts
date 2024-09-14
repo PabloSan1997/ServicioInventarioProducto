@@ -37,7 +37,7 @@ interface SaveProducto {
 }
 
 interface ListSaveProducts {
-    products:SaveProducto[]
+    products: SaveProducto[]
 }
 
 interface LoginDto {
@@ -45,12 +45,19 @@ interface LoginDto {
     password: string;
 }
 interface LoginResponse {
-    username:string;
-    token:string;
+    username: string;
+    token: string;
 }
 
 interface InitialState {
-    productos:ProductoMostrar[];
-    token:string;
-    search:string;
+    productos: ProductoMostrar[];
+    token: string;
+    search: string;
+    message: string;
+    editProduct:ProductoMostrar;
 }
+
+interface Children {
+    children: JSX.Element | JSX.Element[]
+}
+
