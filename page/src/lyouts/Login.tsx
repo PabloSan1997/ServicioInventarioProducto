@@ -4,7 +4,7 @@ import { productActions } from "../slice/productoSlice";
 import { readApi } from "../api/readApi";
 import { Navigate } from "react-router-dom";
 import { routesIndex } from "../utils/routesIndes";
-
+import '../styles/login.scss';
 
 
 export function Login(){
@@ -25,19 +25,21 @@ export function Login(){
     if(state.token.trim())
         return <Navigate to={routesIndex.home}/>
     return(
-        <form onSubmit={subir}>
+        <form onSubmit={subir} className="form_login">
             <label htmlFor="username">Username</label>
             <input 
             type="text" id="username"
             onChange={e => setLoginDto({...loginDto, username:e.target.value})}
+            placeholder="Escribir..."
             />
             <label htmlFor="password">Password</label>
             <input 
             type="password" 
             id="password" 
             onChange={e => setLoginDto({...loginDto, password:e.target.value})}
+            placeholder="Escribir..."
             />
-            <button>Entrar</button>
+            <button className="boton">Entrar</button>
             {!state.message.trim()?null:<p>{state.message}</p>}
         </form>
     )

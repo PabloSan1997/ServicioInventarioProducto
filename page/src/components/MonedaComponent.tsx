@@ -1,9 +1,9 @@
 
-
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../store/hook";
 import { readApi } from "../api/readApi";
 import { MonedaForm } from "./MonedaForm";
+import '../styles/monedaCompnent.scss';
 
 export function MonedaComponent() {
     const [show, setShow] = React.useState(false);
@@ -15,7 +15,7 @@ export function MonedaComponent() {
     }, [dispatch, state.token]);
     return (
         <>
-            <ul onClick={() => setShow(!show)}>
+            <ul onClick={() => setShow(!show)} className="moneda_component">
                 <li>Dolar: ${moneda.dolar}</li>
                 <li>Iva: ${moneda.iva}</li>
                 <li>Gananciar: ${moneda.porcentajeGanancia}</li>

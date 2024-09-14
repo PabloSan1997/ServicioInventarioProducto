@@ -7,6 +7,5 @@ export function Home() {
             <Buscador />
             <Contenedor />
         </>
-
     );
 }

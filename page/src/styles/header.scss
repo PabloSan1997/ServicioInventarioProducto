@@ -1,0 +1,29 @@
+@import 'color.scss';
+
+header{
+    background: $color-background;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    .superior{
+        display: flex;
+        width: 100%;
+        margin:0.5rem 0;
+        h1{
+            margin: auto 2rem;
+        }
+        .ir{
+            margin: auto 2rem auto auto;
+            color: white;
+            font-weight: bold;
+            padding: 0.2rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            &:hover{
+                background: rgba(255, 255, 255, 0.301);
+                border-radius: 0.2rem;
+            }
+        }
+    }
+}

@@ -19,7 +19,7 @@ export function MonedaForm({ onShow }: MonedaFromProps) {
         dispatch(readApi.editMoneda({ token: state.token, moneda: formulario }));
     }
     return (
-        <form onSubmit={submit}>
+        <form onSubmit={submit} className="moneda_form">
             <label htmlFor="dolar">Dolar</label>
             <input
                 type="number"
@@ -41,8 +41,10 @@ export function MonedaForm({ onShow }: MonedaFromProps) {
                 value={formulario.porcentajeGanancia}
                 onChange={e => setFormulario({ ...formulario, porcentajeGanancia: Number(e.target.value) })}
             />
-            <button type='submit'>Cambiar</button>
-            <button type="button" onClick={onShow}>Cancelar</button>
+            <div className="area_botones">
+                <button type='submit' className="boton">Cambiar</button>
+                <button type="button" onClick={onShow} className="boton">Cancelar</button>
+            </div>
         </form>
     );
 }

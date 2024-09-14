@@ -1,0 +1,49 @@
+@import 'color.scss';
+
+.moneda_component{
+    display: flex;
+    list-style: none;
+    margin: auto;
+    width: 100%;
+    padding: 0.5rem 0;
+    box-shadow:inset 0 0 3px white;
+    border-radius: 0.2rem;
+    li{
+        margin: auto;
+        cursor: pointer;
+    }
+    &:hover{
+        background: rgba(255, 255, 255, 0.096);
+    }
+}
+
+.moneda_form{
+    width: 98%;
+    position: fixed;
+    background: $color-background;
+    width: 95%;
+    top: 8rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 1rem;
+    box-sizing: border-box;
+    label{
+        font-size: 1.2rem;
+        margin-bottom: 0.2rem;
+    }
+    input{
+        margin-bottom: 0.7rem;
+        padding: 0.2rem 0.5rem;
+        box-sizing: border-box;
+        font-size: 1.2rem;
+    }
+    .area_botones{
+        margin: 0.2rem 0;
+        button{
+            margin:0 1.2rem 0 0;
+        }
+    }
+}
