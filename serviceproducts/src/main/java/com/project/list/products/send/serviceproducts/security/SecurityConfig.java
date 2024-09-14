@@ -51,11 +51,11 @@ public class SecurityConfig {
                                 "/api/product/price-asc"
                         ).hasRole(RoleEnum.USER.name())
                         .requestMatchers(HttpMethod.POST, "/api/product").hasRole(RoleEnum.USER.name())
-                        .requestMatchers(HttpMethod.PUT,  "/api/product/{id}", "/api/moneda/{id}").hasRole(RoleEnum.USER.name())
+                        .requestMatchers(HttpMethod.PUT,  "/api/product/{id}", "/api/moneda").hasRole(RoleEnum.USER.name())
                         .requestMatchers(HttpMethod.DELETE, "/api/product/{id}").hasRole(RoleEnum.ADMIN.name())
                         .requestMatchers(HttpMethod.POST, "/api/user/login").permitAll()
                         .requestMatchers("/", "index.html", "/assets/**").permitAll()
-                        .anyRequest().permitAll()
+                        .anyRequest().authenticated()
                 )
                 .cors(c -> c.configurationSource(corsConfigurationSource()))
                 .addFilter(new JwtValidationFilter(authenticationManager(), jwtService))

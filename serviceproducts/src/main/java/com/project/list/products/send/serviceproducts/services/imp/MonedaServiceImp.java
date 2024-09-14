@@ -18,11 +18,17 @@ public class MonedaServiceImp implements MonedaService {
 
     @Override
     @Transactional
-    public void editMoneda(MonedasDto monedasDto) {
-        Monedas monedas = ((List<Monedas>) monedaRepository.findAll()).stream().findFirst().orElseThrow();
+    public Monedas editMoneda(MonedasDto monedasDto) {
+        Monedas monedas = getMoneda();
         monedas.setIva(monedasDto.getIva());
-        monedas.setDolar(monedas.getDolar());
-        monedas.setPorcentajeGanancia(monedas.getPorcentajeGanancia());
-        monedaRepository.save(monedas);
+        monedas.setDolar(monedasDto.getDolar());
+        monedas.setPorcentajeGanancia(monedasDto.getPorcentajeGanancia());
+        return monedaRepository.save(monedas);
+    }
+
+    @Override
+    @Transactional
+    public Monedas getMoneda() {
+        return ((List<Monedas>) monedaRepository.findAll()).stream().findFirst().orElseThrow();
     }
 }
