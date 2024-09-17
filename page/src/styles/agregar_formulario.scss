@@ -1,0 +1,27 @@
+
+
+.editar_formulario{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin:2rem auto;
+    label{
+        margin-bottom: 0.8rem;
+        font-size: 1.3rem;
+        color: rgb(7, 2, 34);
+    }
+    textarea{
+        width: 100%;
+        resize: vertical;
+        min-height: 18rem;
+    }
+    .boton{
+        margin-top: 1rem;
+    }
+    .area_botones{
+        margin-top: 1rem;
+        .boton{
+            margin: 0 2rem 0 0;
+        }
+    }
+}

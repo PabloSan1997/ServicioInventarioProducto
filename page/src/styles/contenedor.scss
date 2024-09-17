@@ -1,0 +1,33 @@
+
+.data{
+    min-width: 200%;
+    border-collapse: collapse;
+   
+    thead{
+        background: rgb(49, 3, 3);
+        tr{
+            th{
+                padding: 0.2rem 0;
+                color: white;
+            }
+        }
+    }
+    tbody{
+        background: rgb(247, 229, 229);
+        tr{
+            border: 1px solid rgb(37, 2, 2);
+            transition: background 0.2s ease;
+            &:hover{
+                background: rgb(241, 180, 180);
+            }
+            td{
+                border-right: 1px solid rgb(36, 3, 3);
+                p{
+                    min-width: 100%;
+                    text-align: center;
+                    padding: 0.3rem 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+
+.menu_seccion{
+    width: fit-content;
+    margin: auto;
+    display: flex;
+    margin: 1rem auto;
+    .menu_boton{
+        font-size: 1.8rem;
+        text-decoration: none;
+        border: 2px solid rgb(0, 4, 59);
+        padding: 0 0.5rem;
+        width: 1rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        background: rgb(224, 224, 241);
+        color: rgb(10, 7, 54);
+        &:hover{
+            background: rgb(166, 166, 189);;
+        }
+        &:active{
+            background: rgb(224, 224, 241);
+        }
+    }
+    p{
+        font-size: 1.8rem;
+        margin: 0 1rem;
+    }
+}

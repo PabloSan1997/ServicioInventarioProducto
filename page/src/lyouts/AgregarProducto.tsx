@@ -1,6 +1,7 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../store/hook";
 import { readApi } from "../api/readApi";
+import '../styles/agregar_formulario.scss';
 
 const initialData: SaveProducto = {
     seccion: "",
@@ -26,16 +27,17 @@ export function AgregarProducto() {
         e.preventDefault();
         try {
             const producto:SaveProducto[] = JSON.parse(datos);
+            producto[0].descripcion = producto[0].descripcion.toLocaleUpperCase();
             dispatch(readApi.save({token:state.token, producto}));
         } catch (error) {
             console.error(error);
         }
     }
     return (
-        <form onSubmit={submit}>
+        <form onSubmit={submit} className="agregar_formulario editar_formulario">
             <label htmlFor="nuevoProducto">Datos</label>
             <textarea name="" id="nuevoProducto" value={datos} onChange={e => setDatos(e.target.value)}></textarea>
-            <button type="submit">Agregar</button>
+            <button type="submit" className="boton">Agregar</button>
         </form>
     );
 }

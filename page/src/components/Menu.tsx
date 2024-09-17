@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { routesIndex } from "../utils/routesIndes";
-
+import '../styles/menu.scss';
 
 export function Menu({page}:{page:number}) {
     const retroceder = ()=>{
@@ -11,10 +11,10 @@ export function Menu({page}:{page:number}) {
     }
     const ir = () => `${routesIndex.home}/${page+1}`;
   return (
-    <div>
-        <Link to={retroceder()}>-</Link>
+    <div className="menu_seccion">
+        <Link to={retroceder()} className="menu_boton">-</Link>
         <p>{page}</p>
-        <Link to={ir()}>+</Link>
+        <Link to={ir()} className="menu_boton">+</Link>
     </div>
   );
 }

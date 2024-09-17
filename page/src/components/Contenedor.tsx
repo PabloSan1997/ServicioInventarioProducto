@@ -1,14 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
-
 import React from "react";
-import { Menu } from "./Menu";
 import { cabezas } from "../utils/encabezados";
 import { useAppDispatch, useAppSelector } from "../store/hook";
 import { readApi } from "../api/readApi";
 import { useParams } from "react-router-dom";
 import { ListaProducto } from "./ListaProducto";
-
+import '../styles/contenedor.scss';
 
 export function Contenedor() {
     const dispatch = useAppDispatch();
@@ -22,22 +20,19 @@ export function Contenedor() {
             dispatch(readApi.readBySearch({ token: state.token, name: state.search, page: num }));
     }, [page, state.search.trim(), state.moneda.dolar, state.moneda.iva, state.moneda.porcentajeGanancia]);
     return (
-        <div>
-            <Menu page={num} />
-            <table className="data">
-                <thead>
-                    <tr>
-                        {cabezas.map(p =>
-                            <th key={p}>{p}</th>
-                        )}
-                    </tr>
-                </thead>
-                <tbody>
-                    {state.productos.map(p => (
-                        <ListaProducto key={p.id} {...p} />
-                    ))}
-                </tbody>
-            </table>
-        </div>
+        <table className="data">
+            <thead>
+                <tr>
+                    {cabezas.map(p =>
+                        <th key={p}>{p}</th>
+                    )}
+                </tr>
+            </thead>
+            <tbody>
+                {state.productos.map(p => (
+                    <ListaProducto key={p.id} {...p} />
+                ))}
+            </tbody>
+        </table>
     );
 }
